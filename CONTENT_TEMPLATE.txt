@@ -1,0 +1,130 @@
+===============================================================================
+NATHAN PERSONAL HOMEPAGE - CONTENT TEMPLATE
+===============================================================================
+Fill this out with YOUR real information. Copy/paste this file, answer honestly,
+and send it back. I'll apply everything at once.
+
+===============================================================================
+=== IDENTITY ===
+===============================================================================
+Full name:
+Location (city/country):
+What you do (title/role):
+One-liner about yourself:
+
+===============================================================================
+=== NOW PAGE ===
+===============================================================================
+What are you currently working on? (2-3 sentences)
+
+What's consuming your mental energy lately?
+
+Any recent discoveries or obsessions?
+
+===============================================================================
+=== ABOUT PAGE ===
+===============================================================================
+Your background (brief):
+
+What drives you:
+
+Philosophy on tech/life:
+
+Contact preference (email, Twitter, etc.):
+
+===============================================================================
+=== BOOKSHELF ===
+===============================================================================
+Replace the sample books with YOUR real reads. For each book:
+- Title:
+- Author:
+- Rating (1-5):
+- Status (reading/finished/want):
+- Thoughts (short note):
+- Review (optional, longer form):
+- Key takeaways (optional, bullet list):
+- Quotes (optional):
+- Read if you liked (optional):
+
+(Add as many entries as you want - currently have 6 sample books)
+
+===============================================================================
+=== GAMES ===
+===============================================================================
+Replace the sample games with YOUR real games. For each game:
+- Title:
+- Platform:
+- Rating (1-5):
+- Status (playing/finished/backlog):
+- Thoughts (short note):
+- Review (optional):
+- Playtime (optional):
+- Mechanics (optional, comma separated):
+
+(Add as many entries as you want - currently have 9 sample games)
+
+===============================================================================
+=== MUSIC ===
+===============================================================================
+Replace the sample albums with YOUR real favorites. For each album:
+- Title:
+- Artist:
+- Rating (1-5):
+- Genre:
+- Review (optional):
+- Why it resonates (optional):
+- Favorite tracks (optional, comma separated):
+- Production notes (optional):
+- Lyrics that hit (optional):
+
+(Add as many entries as you want - currently have 10 sample albums)
+
+===============================================================================
+=== SETUP ===
+===============================================================================
+OS:
+Editor:
+Terminal:
+Browser:
+Keyboard:
+Mouse:
+Monitor:
+Any other gear:
+
+===============================================================================
+=== LINKS ===
+===============================================================================
+GitHub URL:
+LinkedIn URL:
+Email:
+Any other links (Twitter, etc.):
+
+===============================================================================
+=== GALLERY ===
+===============================================================================
+Do you have real photos to include? (If yes, provide details)
+- Photo 1 caption/location:
+- Photo 2 caption/location:
+(etc.)
+
+===============================================================================
+=== BLOG ===
+===============================================================================
+Do you plan to write posts? (If yes, I'll set up the MDX structure)
+- Planned post 1 title/topic:
+- Planned post 2 title/topic:
+(etc.)
+
+===============================================================================
+=== EXTRA ===
+===============================================================================
+Anything else you want to add or change on the site:
+
+
+===============================================================================
+INSTRUCTIONS:
+1. Copy this file (pnpm dev to run locally)
+2. Fill in your answers
+3. Send it back
+4. I'll apply everything at once
+===============================================================================
