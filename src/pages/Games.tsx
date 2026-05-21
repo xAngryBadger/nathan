@@ -15,13 +15,18 @@ function GameCard({ game }: { game: typeof games[0] }) {
         <span className="card-title">{game.title}</span>
         <span className="meta-label">{game.platform}</span>
       </div>
-      <div className="flex items-center justify-between mb-2">
-        <span className="meta-accent">{game.status}</span>
-        <Rating n={game.rating} />
-      </div>
-      {game.thoughts && <p className="card-thoughts">{game.thoughts}</p>}
-      
-      <AnimatePresence>
+  <div className="flex items-center justify-between mb-2">
+    <span className="meta-accent">{game.status}</span>
+    {game.rating > 0 ? <Rating n={game.rating} /> : <span className="meta-label">—</span>}
+  </div>
+    {game.thoughts && <p className="card-thoughts">{game.thoughts}</p>}
+    {game.title.includes("Gears") || game.title.includes("Far Cry") ? (
+      <p className="card-thoughts" style={{ color: "var(--color-accent)", fontSize: "0.75rem", marginTop: "0.25rem" }}>
+        ⚠️ Hard mode only
+      </p>
+    ) : null}
+
+    <AnimatePresence>
         {expanded && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
