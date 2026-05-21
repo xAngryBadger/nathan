@@ -24,13 +24,13 @@ export default function About() {
         </p>
         <h2>Além do terminal</h2>
         <p>
-          Sou do espectro do autismo (TEA + TDAH, diagnosticado tarde). Isso
-          significa que eu hiperfoco nas coisas que me agarram — e é assim que
-          acumulo 900+ horas em Dark Souls, 250 em Elden Ring, ou leio sobre
-          como a CIA usou o MoMA pra exportar Expressionismo Abstrato como
-          propaganda da Guerra Fria pro Brasil às 2 da manhã. Sou um mural de
-          vidros estilhaçados — pedaços de cores e formas diferentes colados
-          juntos, e no final das contas, isso é o cérebro TEA + TDAH resumido.
+Sou do espectro do autismo (TEA + TDAH, diagnosticado tarde). Isso
+significa que eu hiperfoco nas coisas que me agarram — e é assim que
+acumulo 900+ horas em Dark Souls, 250 em Elden Ring, ou leio sobre
+como a CIA usou o MoMA pra exportar Expressionismo Abstrato como
+propaganda da Guerra Fria pro Brasil às 2 da manhã. Sou um mural de
+vidros quebrados/estilhaçados — diferentes cores e formas coladas
+juntas, e no final das contas, isso é o cérebro TEA + TDAH resumido.
         </p>
         <p>
           Sou cronicamente online. Navego no Awwwards procurando sites bonitos.
