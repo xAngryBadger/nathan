@@ -1,6 +1,7 @@
 import { useState } from "react";
 import PageTitle from "../components/PageTitle";
 import { motion, AnimatePresence } from "motion/react";
+import { useLanguage } from "../context/LanguageContext";
 
 interface SetupItem {
   name: string;
@@ -81,6 +82,7 @@ const setupItems: SetupItem[] = [
 
 function SetupCard({ item }: { item: SetupItem }) {
   const [expanded, setExpanded] = useState(false);
+  const { t } = useLanguage();
 
   const toggleExpand = () => setExpanded(!expanded);
 
@@ -104,13 +106,13 @@ function SetupCard({ item }: { item: SetupItem }) {
             <div className="pt-3 mt-3 border-t border-[color-mix(in_oklab,var(--color-text)_10%,transparent)]">
               {item.why && (
                 <div className="mb-3">
-                  <h4 className="text-xs font-mono uppercase tracking-wider text-[var(--color-accent)] mb-2">Why</h4>
+                  <h4 className="text-xs font-mono uppercase tracking-wider text-[var(--color-accent)] mb-2">{t.common.why}</h4>
                   <p className="text-sm text-[var(--color-text-2)]">{item.why}</p>
                 </div>
               )}
               {item.alternatives && item.alternatives.length > 0 && (
                 <div className="mb-3">
-                  <h4 className="text-xs font-mono uppercase tracking-wider text-[var(--color-text-3)] mb-2">Alternatives</h4>
+                  <h4 className="text-xs font-mono uppercase tracking-wider text-[var(--color-text-3)] mb-2">{t.common.alternatives}</h4>
                   <div className="flex flex-wrap gap-2">
                     {item.alternatives.map((alt, i) => (
                       <span key={i} className="text-sm text-[var(--color-text-2)]">{alt}</span>
@@ -120,7 +122,7 @@ function SetupCard({ item }: { item: SetupItem }) {
               )}
               {item.link && (
                 <a href={item.link} className="text-sm text-[var(--color-accent-light)]" target="_blank" rel="noopener noreferrer">
-                  Buy / Learn more →
+                  {t.common.buyLearn}
                 </a>
               )}
             </div>
@@ -132,12 +134,12 @@ function SetupCard({ item }: { item: SetupItem }) {
 }
 
 export default function Setup() {
+  const { t } = useLanguage();
   return (
     <section className="px-5 sm:px-0">
-      <PageTitle subtitle="/setup" title="Setup" />
+      <PageTitle subtitle="/setup" title={t.pages.setup.title} />
       <p className="prose" style={{ maxWidth: "36rem", marginBottom: "2rem" }}>
-        Meu workspace digital. Tudo é keyboard-driven, minimal, e customizado
-        pra como meu cérebro funciona.
+        {t.pages.setup.intro}
       </p>
       <div className="flex flex-col gap-3">
         {setupItems.map((item) => (

@@ -3,9 +3,11 @@ import PageTitle from "../components/PageTitle";
 import { albums, genreNotes } from "../data/music";
 import Rating from "../components/Rating";
 import { motion, AnimatePresence } from "motion/react";
+import { useLanguage } from "../context/LanguageContext";
 
 function AlbumCard({ album }: { album: typeof albums[0] }) {
   const [expanded, setExpanded] = useState(false);
+  const { t } = useLanguage();
 
   const toggleExpand = () => setExpanded(!expanded);
 
@@ -76,19 +78,18 @@ function AlbumCard({ album }: { album: typeof albums[0] }) {
 }
 
 export default function Music() {
+  const { t } = useLanguage();
   return (
     <section className="px-5 sm:px-0">
-      <PageTitle subtitle="/music" title="Music" />
+      <PageTitle subtitle="/music" title={t.pages.music.title} />
       <p className="prose" style={{ maxWidth: "36rem", marginBottom: "2rem" }}>
-    Álbuns que eu sempre volto. Rock do HD do meu pai, electronic de rabbit
-    holes tarde da noite, trilhas de filmes esquisitos com notas péssimas. Nenhum
-    gênero intocado — tenho um exemplo de tudo.
+        {t.pages.music.intro}
       </p>
 
       <div className="mb-8">
-        <h2 className="section-label section-label-accent">Genre Map</h2>
+        <h2 className="section-label section-label-accent">{t.pages.music.genreMap}</h2>
         <p className="text-sm text-[var(--color-text-3)] mb-3" style={{ maxWidth: "36rem" }}>
-          Como encontrei cada canto da minha biblioteca.
+          {t.pages.music.genreMapIntro}
         </p>
         <div className="flex flex-wrap gap-2">
           {genreNotes.map((g) => (
@@ -99,7 +100,7 @@ export default function Music() {
         </div>
       </div>
 
-      <h2 className="section-label">Albums</h2>
+      <h2 className="section-label">{t.pages.music.albums}</h2>
       <div className="flex flex-col gap-3">
         {albums.map((album) => (
           <AlbumCard key={`${album.artist}-${album.title}`} album={album} />

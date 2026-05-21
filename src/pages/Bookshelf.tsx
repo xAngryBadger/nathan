@@ -3,6 +3,7 @@ import PageTitle from "../components/PageTitle";
 import { books } from "../data/bookshelf";
 import Rating from "../components/Rating";
 import { motion, AnimatePresence } from "motion/react";
+import { useLanguage } from "../context/LanguageContext";
 
 function StatusTag({ status }: { status: string }) {
   return (
@@ -14,6 +15,7 @@ function StatusTag({ status }: { status: string }) {
 
 function BookCard({ book }: { book: typeof books[0] }) {
   const [expanded, setExpanded] = useState(false);
+  const { t } = useLanguage();
 
   const toggleExpand = () => setExpanded(!expanded);
 
@@ -26,12 +28,12 @@ function BookCard({ book }: { book: typeof books[0] }) {
       <div className="flex items-center justify-between mb-2">
         <span className="card-subtitle">{book.author}</span>
         <div className="flex items-center gap-2">
-          {book.type === "essay" && <span className="tag">essay</span>}
+          {book.type === "essay" && <span className="tag">{t.common.essay}</span>}
           <Rating n={book.rating} />
         </div>
       </div>
       {book.thoughts && <p className="card-thoughts">{book.thoughts}</p>}
-      
+
       <AnimatePresence>
         {expanded && (
           <motion.div
@@ -49,7 +51,7 @@ function BookCard({ book }: { book: typeof books[0] }) {
               )}
               {book.takeaways && book.takeaways.length > 0 && (
                 <div className="mb-3">
-                  <h4 className="text-xs font-mono uppercase tracking-wider text-[var(--color-accent)] mb-2">Key Takeaways</h4>
+                  <h4 className="text-xs font-mono uppercase tracking-wider text-[var(--color-accent)] mb-2">{t.common.keyTakeaways}</h4>
                   <ul className="space-y-1">
                     {book.takeaways.map((takeaway, i) => (
                       <li key={i} className="text-sm text-[var(--color-text-2)]">• {takeaway}</li>
@@ -59,7 +61,7 @@ function BookCard({ book }: { book: typeof books[0] }) {
               )}
               {book.quotes && book.quotes.length > 0 && (
                 <div className="mb-3">
-                  <h4 className="text-xs font-mono uppercase tracking-wider text-[var(--color-text-3)] mb-2">Quotes</h4>
+                  <h4 className="text-xs font-mono uppercase tracking-wider text-[var(--color-text-3)] mb-2">{t.common.quotes}</h4>
                   <ul className="space-y-2">
                     {book.quotes.map((quote, i) => (
                       <li key={i} className="text-sm text-[var(--color-text-2)] italic border-l-2 border-[var(--color-accent)] pl-3">
@@ -71,7 +73,7 @@ function BookCard({ book }: { book: typeof books[0] }) {
               )}
               {book.readIfYouLiked && (
                 <div className="text-xs text-[var(--color-text-3)]">
-                  Read if you liked: {book.readIfYouLiked}
+                  {t.common.readIfYouLiked}: {book.readIfYouLiked}
                 </div>
               )}
             </div>
@@ -83,20 +85,21 @@ function BookCard({ book }: { book: typeof books[0] }) {
 }
 
 export default function Bookshelf() {
+  const { t } = useLanguage();
   const reading = books.filter((b) => b.status === "reading");
   const finished = books.filter((b) => b.status === "finished");
   const want = books.filter((b) => b.status === "want");
 
   return (
     <section className="px-5 sm:px-0">
-      <PageTitle subtitle="/bookshelf" title="Bookshelf" />
+      <PageTitle subtitle="/bookshelf" title={t.pages.bookshelf.title} />
       <p className="prose" style={{ maxWidth: "36rem", marginBottom: "2rem" }}>
-        Books I'm reading, have read, or want to. Not a review blog — just what stuck with me.
+        {t.pages.bookshelf.intro}
       </p>
 
       {reading.length > 0 && (
         <>
-          <h2 className="section-label section-label-accent">Currently Reading</h2>
+          <h2 className="section-label section-label-accent">{t.pages.bookshelf.currentlyReading}</h2>
           <div className="flex flex-col gap-3 mb-8">
             {reading.map((book) => (
               <BookCard key={book.title} book={book} />
@@ -107,7 +110,7 @@ export default function Bookshelf() {
 
       {finished.length > 0 && (
         <>
-          <h2 className="section-label">Finished</h2>
+          <h2 className="section-label">{t.pages.bookshelf.finished}</h2>
           <div className="flex flex-col gap-3 mb-8">
             {finished.map((book) => (
               <BookCard key={book.title} book={book} />
@@ -118,7 +121,7 @@ export default function Bookshelf() {
 
       {want.length > 0 && (
         <>
-          <h2 className="section-label">Want to Read</h2>
+          <h2 className="section-label">{t.pages.bookshelf.wantToRead}</h2>
           <div className="flex flex-col gap-3">
             {want.map((book) => (
               <BookCard key={book.title} book={book} />

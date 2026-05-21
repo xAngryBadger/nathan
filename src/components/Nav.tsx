@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { site, menuLinks } from "../data/site";
 import DirectionalLinkTile from "./DirectionalLinkTile";
 import BottomSheet from "./BottomSheet";
+import LanguageToggle from "./LanguageToggle";
 
 function GithubIcon() {
   return (
@@ -32,6 +33,9 @@ export default function Nav() {
         </nav>
 
         <div className="nav-footer">
+          <div className="flex items-center gap-2 mb-2">
+            <LanguageToggle />
+          </div>
           <div className="nav-footer-socials">
             <a href={site.github} target="_blank" rel="noopener noreferrer" className="nav-social-link" aria-label="GitHub">
               <GithubIcon />

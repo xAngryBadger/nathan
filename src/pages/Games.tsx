@@ -3,9 +3,11 @@ import PageTitle from "../components/PageTitle";
 import { games } from "../data/games";
 import Rating from "../components/Rating";
 import { motion, AnimatePresence } from "motion/react";
+import { useLanguage } from "../context/LanguageContext";
 
 function GameCard({ game }: { game: typeof games[0] }) {
   const [expanded, setExpanded] = useState(false);
+  const { t } = useLanguage();
 
   const toggleExpand = () => setExpanded(!expanded);
 
@@ -15,18 +17,18 @@ function GameCard({ game }: { game: typeof games[0] }) {
         <span className="card-title">{game.title}</span>
         <span className="meta-label">{game.platform}</span>
       </div>
-  <div className="flex items-center justify-between mb-2">
-    <span className="meta-accent">{game.status}</span>
-    {game.rating > 0 ? <Rating n={game.rating} /> : <span className="meta-label">—</span>}
-  </div>
-    {game.thoughts && <p className="card-thoughts">{game.thoughts}</p>}
-    {game.title.includes("Gears") || game.title.includes("Far Cry") ? (
-      <p className="card-thoughts" style={{ color: "var(--color-accent)", fontSize: "0.75rem", marginTop: "0.25rem" }}>
-        ⚠️ Hard mode only
-      </p>
-    ) : null}
+      <div className="flex items-center justify-between mb-2">
+        <span className="meta-accent">{game.status}</span>
+        {game.rating > 0 ? <Rating n={game.rating} /> : <span className="meta-label">—</span>}
+      </div>
+      {game.thoughts && <p className="card-thoughts">{game.thoughts}</p>}
+      {(game.title.includes("Gears") || game.title.includes("Far Cry")) && (
+        <p className="card-thoughts" style={{ color: "var(--color-accent)", fontSize: "0.75rem", marginTop: "0.25rem" }}>
+          {t.common.hardModeOnly}
+        </p>
+      )}
 
-    <AnimatePresence>
+      <AnimatePresence>
         {expanded && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
@@ -43,13 +45,13 @@ function GameCard({ game }: { game: typeof games[0] }) {
               )}
               {game.playtime && (
                 <div className="mb-3">
-                  <span className="text-xs font-mono uppercase tracking-wider text-[var(--color-text-3)]">Playtime: </span>
+                  <span className="text-xs font-mono uppercase tracking-wider text-[var(--color-text-3)]">{t.common.playtime}: </span>
                   <span className="text-sm text-[var(--color-text-2)]">{game.playtime}</span>
                 </div>
               )}
               {game.mechanics && game.mechanics.length > 0 && (
                 <div className="mb-3">
-                  <h4 className="text-xs font-mono uppercase tracking-wider text-[var(--color-accent)] mb-2">Mechanics</h4>
+                  <h4 className="text-xs font-mono uppercase tracking-wider text-[var(--color-accent)] mb-2">{t.common.mechanics}</h4>
                   <div className="flex flex-wrap gap-2">
                     {game.mechanics.map((mech, i) => (
                       <span key={i} className="tag">{mech}</span>
@@ -59,7 +61,7 @@ function GameCard({ game }: { game: typeof games[0] }) {
               )}
               {game.comparison && (
                 <div className="text-xs text-[var(--color-text-3)]">
-                  Similar to: {game.comparison}
+                  {t.common.similarTo}: {game.comparison}
                 </div>
               )}
             </div>
@@ -71,6 +73,7 @@ function GameCard({ game }: { game: typeof games[0] }) {
 }
 
 export default function Games() {
+  const { t } = useLanguage();
   const playing = games.filter((g) => g.status === "playing");
   const finished = games.filter((g) => g.status === "finished");
   const backlog = games.filter((g) => g.status === "backlog");
@@ -78,14 +81,14 @@ export default function Games() {
 
   return (
     <section className="px-5 sm:px-0">
-      <PageTitle subtitle="/games" title="Games" />
+      <PageTitle subtitle="/games" title={t.pages.games.title} />
       <p className="prose" style={{ maxWidth: "36rem", marginBottom: "2rem" }}>
-        Games that left something with me. Not a backlog tracker — these are the ones that matter.
+        {t.pages.games.intro}
       </p>
 
       {playing.length > 0 && (
         <>
-          <h2 className="section-label section-label-accent">Playing</h2>
+          <h2 className="section-label section-label-accent">{t.pages.games.playing}</h2>
           <div className="flex flex-col gap-3 mb-8">
             {playing.map((game) => (
               <GameCard key={game.title} game={game} />
@@ -96,7 +99,7 @@ export default function Games() {
 
       {finished.length > 0 && (
         <>
-          <h2 className="section-label">Finished</h2>
+          <h2 className="section-label">{t.pages.games.finished}</h2>
           <div className="flex flex-col gap-3 mb-8">
             {finished.map((game) => (
               <GameCard key={game.title} game={game} />
@@ -105,27 +108,27 @@ export default function Games() {
         </>
       )}
 
-    {backlog.length > 0 && (
-      <>
-        <h2 className="section-label">Backlog</h2>
-        <div className="flex flex-col gap-3 mb-8">
-          {backlog.map((game) => (
-            <GameCard key={game.title} game={game} />
-          ))}
-        </div>
-      </>
-    )}
+      {backlog.length > 0 && (
+        <>
+          <h2 className="section-label">{t.pages.games.backlog}</h2>
+          <div className="flex flex-col gap-3 mb-8">
+            {backlog.map((game) => (
+              <GameCard key={game.title} game={game} />
+            ))}
+          </div>
+        </>
+      )}
 
-    {abandoned.length > 0 && (
-      <>
-        <h2 className="section-label">Abandoned</h2>
-        <div className="flex flex-col gap-3">
-          {abandoned.map((game) => (
-            <GameCard key={game.title} game={game} />
-          ))}
-        </div>
-      </>
-    )}
-  </section>
+      {abandoned.length > 0 && (
+        <>
+          <h2 className="section-label">{t.pages.games.abandoned}</h2>
+          <div className="flex flex-col gap-3">
+            {abandoned.map((game) => (
+              <GameCard key={game.title} game={game} />
+            ))}
+          </div>
+        </>
+      )}
+    </section>
   );
 }

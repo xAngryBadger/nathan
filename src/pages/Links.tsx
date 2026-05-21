@@ -1,20 +1,21 @@
 import { links } from "../data/links";
+import { useLanguage } from "../context/LanguageContext";
 
 const categories = [
-  { key: "people" as const, label: "People" },
-  { key: "sites" as const, label: "Sites" },
-  { key: "tools" as const, label: "Tools" },
-  { key: "reading" as const, label: "Reading" },
+  { key: "social" as const, label: "Social" },
+  { key: "work" as const, label: "Work" },
+  { key: "projects" as const, label: "Projects" },
 ];
 
 import PageTitle from "../components/PageTitle";
 
 export default function Links() {
+  const { t } = useLanguage();
   return (
     <section className="px-5 sm:px-0">
-      <PageTitle subtitle="/links" title="Links" />
+      <PageTitle subtitle="/links" title={t.pages.links.title} />
       <p className="prose" style={{ maxWidth: "36rem", marginBottom: "2rem" }}>
-        Places, people, and tools I keep coming back to. Not comprehensive — just what I actually use and admire.
+        {t.pages.links.intro}
       </p>
 
       {categories.map((cat) => {

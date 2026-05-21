@@ -1,14 +1,16 @@
 import PageTitle from "../components/PageTitle";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function Gallery() {
+  const { t } = useLanguage();
   return (
     <section className="px-5 sm:px-0">
-      <PageTitle subtitle="/gallery" title="Gallery" />
+      <PageTitle subtitle="/gallery" title={t.pages.gallery.title} />
       <p className="prose" style={{ maxWidth: "36rem", marginBottom: "2rem" }}>
-        Screenshots, photos, visual things. Coming soon — need to curate and add images first.
+        {t.pages.gallery.intro}
       </p>
       <div className="placeholder-box">
-        Images coming soon
+        {t.pages.gallery.placeholder}
       </div>
     </section>
   );
