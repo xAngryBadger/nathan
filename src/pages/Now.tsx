@@ -5,35 +5,41 @@ export default function Now() {
     <section className="px-5 sm:px-0">
       <PageTitle subtitle="/now" title="Now" />
       <p className="prose" style={{ maxWidth: "36rem" }}>
-        This is what I'm up to right now. Last updated May 2026.
+        O que estou fazendo agora. Última atualização: Maio 2026.
       </p>
       <div className="prose" style={{ maxWidth: "36rem" }}>
-        <h2>Focus</h2>
+        <h2>Foco</h2>
         <ul>
-          <li>Finishing my Computer Engineering degree at UFOP</li>
-          <li>Building HarpIA — autonomous AI agent system</li>
-          <li>Working on SRF System</li>
-          <li>Ricing my CachyOS + Hyprland setup (always)</li>
+          <li>SRF System — sistema de agentes IA muito ativo, renomeado recentemente</li>
+          <li>ForestAI — projeto IA muito ativo, renomeado recentemente</li>
+          <li>Estudando técnicas de RAG, jailbreaks e prompt optimization para agentes com skills</li>
+          <li>Engenharia da Computação na Cruzeiro do Sul</li>
         </ul>
-        <h2>Playing</h2>
+        <h2>Descobertas &amp; Obsessões</h2>
         <ul>
-          <li>Factorio — the factory must grow</li>
-          <li>Baldur's Gate 3 — second playthrough</li>
+          <li>TEA + TDAH — diagnosticado tarde, finalmente entendendo porque meu cérebro funciona do jeito que funciona</li>
+          <li>RAG pipelines e arquiteturas de agentes — não consigo parar de ler sobre</li>
+          <li>Awwwards — cronicamente online procurando inspiração de design</li>
+          <li>Artigos sobre autismo, TDAH, política, tecnologia — o espectro completo</li>
         </ul>
-        <h2>Reading</h2>
+        <h2>Jogando</h2>
         <ul>
-          <li>Gödel, Escher, Bach — taking it slow, this one demands attention</li>
-          <li>SICP — working through the exercises</li>
+          <li>Ainda na trilogia Dark Souls (900h+ e contando)</li>
+          <li>Elden Ring — 250h fundo</li>
         </ul>
-        <h2>Listening</h2>
+        <h2>Ouvindo</h2>
         <ul>
-          <li>A lot of GY!BE and Radiohead again</li>
-          <li>Revisiting Frank Ocean's Blonde</li>
+          <li>SOAD em repeat — veio do HD do meu pai, agora é meu</li>
+          <li>Crystal Castles quando preciso de caos digital</li>
+          <li>Seekae — Tais, Stars Below, Test &amp; Recognise no loop</li>
+          <li>OneRepublic — Counting Stars nunca envelhece</li>
         </ul>
         <h2>Otherwise</h2>
         <p>
-          Living in Mariana, MG. Spending time outdoors when I can.
-          This site is my corner of the internet — not a resume, just me.
+          Morando em Minas Gerais, Brasil. Cronicamente online. Lendo sobre
+          TDAH, autismo, política e tecnologia. Navegando no Awwwards por
+          inspiração. Este site é meu canto da internet — não é currículo, sou
+          eu.
         </p>
       </div>
     </section>

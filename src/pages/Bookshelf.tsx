@@ -25,7 +25,10 @@ function BookCard({ book }: { book: typeof books[0] }) {
       </div>
       <div className="flex items-center justify-between mb-2">
         <span className="card-subtitle">{book.author}</span>
-        <Rating n={book.rating} />
+        <div className="flex items-center gap-2">
+          {book.type === "essay" && <span className="tag">essay</span>}
+          <Rating n={book.rating} />
+        </div>
       </div>
       {book.thoughts && <p className="card-thoughts">{book.thoughts}</p>}
       

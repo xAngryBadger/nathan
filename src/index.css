@@ -378,6 +378,12 @@ body { margin: 0; -webkit-font-smoothing: antialiased; }
 .rating-dot-filled {
   background: var(--color-accent);
 }
+.rating-dot-half {
+  width: 0.375rem;
+  height: 0.375rem;
+  border-radius: 50%;
+  background: linear-gradient(90deg, var(--color-accent) 50%, var(--color-text-3) 50%);
+}
 
 .prose {
   font-size: 1rem;

@@ -48,24 +48,34 @@ const setupItems: SetupItem[] = [
     alternatives: ["LibreWolf"],
   },
   {
-    name: "ThinkPad T14 Gen 3",
-    category: "Daily Driver",
-    description: "Linux runs perfectly on it.",
+    name: "i5-13400F + RTX 3060 + 32GB RAM",
+    category: "PC",
+    description: "1TB NVMe Kingston SNV3S1000G + 1TB HDD WDC WD10EZEX. O que importa é rodar tudo sem compromisso.",
   },
   {
-    name: "Dell S2421HN",
+    name: "DuexPro 180MHz 27\" QHD",
     category: "Monitor",
-    description: "External monitor when I need the space.",
+    description: "27 polegadas, QHD, 180MHz. O espaço de trabalho que eu preciso.",
   },
   {
-    name: "Keychron K2",
+    name: "Redragon Kala 557",
     category: "Keyboard",
-    description: "Mechanical, wireless, 75% layout.",
+    description: "Mecânico, layout ABNT. O que importa é que funciona e tecla bonito.",
   },
   {
-    name: "Logitech MX Anywhere 3",
+    name: "Tiger M01",
     category: "Mouse",
-    description: "Scroll wheel is unmatched.",
+    description: "Leve, preciso. Não preciso de mais que isso.",
+  },
+  {
+    name: "Razer Kraken Ultimate",
+    category: "Headset",
+    description: "THX Spatial Audio. O som envolvente que faz diferença no Dark Souls.",
+  },
+  {
+    name: "Fifine K688",
+    category: "Microphone",
+    description: "Condensador USB. Para calls e gravações — claro e direto.",
   },
 ];
 
@@ -81,7 +91,7 @@ function SetupCard({ item }: { item: SetupItem }) {
         <span className="tag">{item.category}</span>
       </div>
       <p className="card-thoughts mb-2">{item.description}</p>
-      
+
       <AnimatePresence>
         {expanded && (
           <motion.div
@@ -126,7 +136,8 @@ export default function Setup() {
     <section className="px-5 sm:px-0">
       <PageTitle subtitle="/setup" title="Setup" />
       <p className="prose" style={{ maxWidth: "36rem", marginBottom: "2rem" }}>
-        My digital workspace. Everything is keyboard-driven, minimal, and customized to how my brain works.
+        Meu workspace digital. Tudo é keyboard-driven, minimal, e customizado
+        pra como meu cérebro funciona.
       </p>
       <div className="flex flex-col gap-3">
         {setupItems.map((item) => (

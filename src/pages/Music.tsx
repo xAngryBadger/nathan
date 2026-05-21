@@ -1,6 +1,6 @@
 import { useState } from "react";
 import PageTitle from "../components/PageTitle";
-import { albums } from "../data/music";
+import { albums, genreNotes } from "../data/music";
 import Rating from "../components/Rating";
 import { motion, AnimatePresence } from "motion/react";
 
@@ -21,7 +21,7 @@ function AlbumCard({ album }: { album: typeof albums[0] }) {
           <span className="tag">{album.genre}</span>
         )}
       </div>
-      
+
       <AnimatePresence>
         {expanded && (
           <motion.div
@@ -80,8 +80,26 @@ export default function Music() {
     <section className="px-5 sm:px-0">
       <PageTitle subtitle="/music" title="Music" />
       <p className="prose" style={{ maxWidth: "36rem", marginBottom: "2rem" }}>
-        Albums I keep coming back to. Not exhaustive — just the ones that shaped my taste.
+    Álbuns que eu sempre volto. Rock do HD do meu pai, electronic de rabbit
+    holes tarde da noite, trilhas de filmes esquisitos com notas péssimas. Nenhum
+    gênero intocado — tenho um exemplo de tudo.
       </p>
+
+      <div className="mb-8">
+        <h2 className="section-label section-label-accent">Genre Map</h2>
+        <p className="text-sm text-[var(--color-text-3)] mb-3" style={{ maxWidth: "36rem" }}>
+          Como encontrei cada canto da minha biblioteca.
+        </p>
+        <div className="flex flex-wrap gap-2">
+          {genreNotes.map((g) => (
+            <span key={g.genre} className="tag" title={g.note}>
+              {g.genre}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <h2 className="section-label">Albums</h2>
       <div className="flex flex-col gap-3">
         {albums.map((album) => (
           <AlbumCard key={`${album.artist}-${album.title}`} album={album} />

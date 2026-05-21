@@ -6,38 +6,69 @@ export default function About() {
       <PageTitle subtitle="/about" title="About" />
       <div className="prose" style={{ maxWidth: "36rem" }}>
         <p>
-          I'm Isaac Nathan — most people just call me Nathan. I'm a Computer Engineering
-          student at UFOP, coming from a Chemistry background. That pivot is a story
-          for another time, but the short version: I found Python in 2022, fell hard,
-          and never looked back.
+          Sou Isaac Nathan — a maioria só me chama de Nathan. Estudante de
+          Engenharia da Computação na Cruzeiro do Sul, vindo da Química (UFOP
+          Industrial → UFSJ Engenharia Química → finalmente encontrei meu lugar
+          na Computação). Essa virada levou anos de indecisão aos 17-18, passando
+          por múltiplas universidades até encontrar o que clicou. A versão curta:
+          encontrei Python em 2022, caí de cabeça, e nunca olhei pra trás.
         </p>
         <p>
-          By day I build AI systems with production impact — agent pipelines, LLM integrations,
-          full-stack applications. By night I'm a Linux enthusiast running CachyOS with
-          a Hyprland rice that I'm never done tweaking. My setup is an extension of how
-          I think: minimal, keyboard-driven, custom to my brain.
+          De dia construo sistemas de IA com impacto em produção — pipelines de
+          agentes, integrações LLM, aplicações full-stack. Técnicas de RAG,
+          jailbreaks, prompt engineering, agentes com skills — é isso que me
+          consome. Atualmente trabalhando no SRF System e ForestAI, dois projetos
+          muito ativos e renomeados. De noite sou entusiasta Linux rodando CachyOS
+          com um rice no Hyprland que nunca fica pronto. Meu setup é uma extensão
+          de como penso: minimal, keyboard-driven, customizado pro meu cérebro.
         </p>
-        <h2>Beyond the terminal</h2>
+        <h2>Além do terminal</h2>
         <p>
-          I'm on the autism spectrum (ASD + ADHD, if you care about labels). That means
-          I hyperfocus on things that grab me — which is how I end up going deep on stuff
-          like obscure Vim plugins or post-rock discographies at 2am.
-        </p>
-        <p>
-          I value quiet, competence, and people who say what they mean. I don't do small
-          talk well but I can talk for hours about systems design, game narratives, or
-          why Outer Wilds is the greatest game ever made.
-        </p>
-        <h2>This site</h2>
-        <p>
-          This is my personal corner of the internet. Not a portfolio, not a CV —
-          just a place for the things I care about outside of work. My bookshelf, the games
-          I love, what I'm listening to, how my desk looks. The kind of stuff that used
-          to live on neocities pages before everything became a brand.
+          Sou do espectro do autismo (TEA + TDAH, diagnosticado tarde). Isso
+          significa que eu hiperfoco nas coisas que me agarram — e é assim que
+          acumulo 900+ horas em Dark Souls, 250 em Elden Ring, ou leio sobre
+          como a CIA usou o MoMA pra exportar Expressionismo Abstrato como
+          propaganda da Guerra Fria pro Brasil às 2 da manhã. Sou um mural de
+          vidros estilhaçados — pedaços de cores e formas diferentes colados
+          juntos, e no final das contas, isso é o cérebro TEA + TDAH resumido.
         </p>
         <p>
-          Built with React, GSAP, and Tailwind. Inspired by Kyrylo Orlov's split-panel
-          layout. Dark because bright screens hurt my eyes at night.
+          Sou cronicamente online. Navego no Awwwards procurando sites bonitos.
+          Leio artigos que vão de TDAH, autismo, política e tecnologia. Faço
+          piada em inglês e português. Minha biblioteca musical tem centenas de
+          músicas em todos os gêneros — rock do HD do meu pai, phonk, jungle,
+          country, pop descoberto via Shazam em loja de roupa. Não tem nada que
+          eu não tenha ouvido e não tenha um exemplo.
+        </p>
+        <h2>O que me formou</h2>
+        <p>
+          Minha filosofia de vida vem de Life is Strange. Minha drive pra lutar
+          por um mundo melhor vem de Dark Souls — mesmo contra forças
+          imparáveis, podemos ser os escolhidos, não por alguém acima de nós, mas
+          no sentido de protagonismo da própria vida. Far Cry 5 me fez sentir um
+          cowboy com uma puma companheira e um arco composto. Alter Ego mudou
+          minha mentalidade e me apresentou Kafka, Dostoevsky e Dazai. Todos os
+          jogos carregam lições e ideias que se fixaram permanentemente em mim.
+        </p>
+        <p>
+          Só jogo no modo difícil — é isso ou nada. Sou fã obcecado de Como
+          Treinar Seu Dragão (filmes, séries, todos os livros e edições
+          especiais) e Avatar (vi os dois primeiros filmes 9 vezes combinadas,
+          li partes dos quadrinhos). Li mais de cem livros — do Guia do
+          Mochileiro das Galáxias à análise de Serge Guilbaut sobre como Nova
+          York roubou a ideia de arte moderna.
+        </p>
+        <h2>Este site</h2>
+        <p>
+          Este é meu canto pessoal da internet. Não é portfólio, não é CV — é
+          só um lugar pras coisas que me importam fora do trabalho. Minha
+          estante, os jogos que amo, o que tô ouvindo, como é minha mesa. O tipo
+          de coisa que costumava viver em páginas do Neocities antes de tudo virar
+          marca.
+        </p>
+        <p>
+          Construído com React, GSAP e Tailwind. Inspirado no layout split-panel
+          do Kyrylo Orlov. Escuro porque tela clara dói meus olhos de noite.
         </p>
       </div>
     </section>

@@ -69,6 +69,7 @@ export default function Games() {
   const playing = games.filter((g) => g.status === "playing");
   const finished = games.filter((g) => g.status === "finished");
   const backlog = games.filter((g) => g.status === "backlog");
+  const abandoned = games.filter((g) => g.status === "abandoned");
 
   return (
     <section className="px-5 sm:px-0">
@@ -99,16 +100,27 @@ export default function Games() {
         </>
       )}
 
-      {backlog.length > 0 && (
-        <>
-          <h2 className="section-label">Backlog</h2>
-          <div className="flex flex-col gap-3">
-            {backlog.map((game) => (
-              <GameCard key={game.title} game={game} />
-            ))}
-          </div>
-        </>
-      )}
-    </section>
+    {backlog.length > 0 && (
+      <>
+        <h2 className="section-label">Backlog</h2>
+        <div className="flex flex-col gap-3 mb-8">
+          {backlog.map((game) => (
+            <GameCard key={game.title} game={game} />
+          ))}
+        </div>
+      </>
+    )}
+
+    {abandoned.length > 0 && (
+      <>
+        <h2 className="section-label">Abandoned</h2>
+        <div className="flex flex-col gap-3">
+          {abandoned.map((game) => (
+            <GameCard key={game.title} game={game} />
+          ))}
+        </div>
+      </>
+    )}
+  </section>
   );
 }
