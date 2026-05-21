@@ -7,7 +7,6 @@ import { useLanguage } from "../context/LanguageContext";
 
 function AlbumCard({ album }: { album: typeof albums[0] }) {
   const [expanded, setExpanded] = useState(false);
-  const { t } = useLanguage();
 
   const toggleExpand = () => setExpanded(!expanded);
 
