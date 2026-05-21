@@ -8,13 +8,14 @@ export default function Now() {
         O que estou fazendo agora. Última atualização: Maio 2026.
       </p>
       <div className="prose" style={{ maxWidth: "36rem" }}>
-        <h2>Foco</h2>
-        <ul>
-          <li>SRF System — sistema de agentes IA muito ativo, renomeado recentemente</li>
-          <li>ForestAI — projeto IA muito ativo, renomeado recentemente</li>
-          <li>Estudando técnicas de RAG, jailbreaks e prompt optimization para agentes com skills</li>
-          <li>Engenharia da Computação na Cruzeiro do Sul</li>
-        </ul>
+<h2>Foco</h2>
+<ul>
+  <li>HarpIA — motor de automação criativa com 7+ modelos de IA (GPT-4.1, DALL-E 3, Flux, Sora, Veo)</li>
+  <li>SRF System — planejamento operacional para restauração florestal em larga escala</li>
+  <li>ForestAI — detecção e classificação de espécies florestais com Deep Learning (projeto de pesquisa)</li>
+  <li>Estudando técnicas de RAG, jailbreaks e prompt optimization para agentes com skills</li>
+  <li>Engenharia da Computação na Cruzeiro do Sul</li>
+</ul>
         <h2>Descobertas &amp; Obsessões</h2>
         <ul>
           <li>TEA + TDAH — diagnosticado tarde, finalmente entendendo porque meu cérebro funciona do jeito que funciona</li>
