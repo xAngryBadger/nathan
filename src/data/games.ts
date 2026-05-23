@@ -166,7 +166,6 @@ playtime: "233h",
 mechanics: ["Battle Royale", "Legend abilities", "Ping system", "Squad-based"],
 },
 {
-{
 title: "Far Cry 5",
 platform: "PC",
 rating: 4.5,
